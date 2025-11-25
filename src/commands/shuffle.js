@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-const gerarTimes = require("../utils/generateTeam");
+const generatedTeams = require("../utils/generateTeam");
 
 module.exports = {
     name: "embaralhar",
@@ -10,7 +10,7 @@ module.exports = {
             return message.reply("Você precisa estar em um canal de voz!");
         }
 
-        const resultado = gerarTimes(member.voice.channel, client);
+        const resultado = generatedTeams(member.voice.channel, client);
 
         if (!resultado) {
             return message.reply("Preciso de pelo menos 2 pessoas para formar times.");
